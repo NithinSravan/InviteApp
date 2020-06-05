@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Sen';
+}
+header{
+    width:100%;
+    margin: 0 auto;
+    position: relative;
+    background:linear-gradient(45deg,rgb(42, 170, 255),rgb(35, 230, 188),rgb(40, 247, 144),rgb(189, 255, 113));
+    z-index: 1;
+}
+header h1{
+
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    padding: 20px;
+}
+header h3{
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+ nav{
+     background-color: white;
+ }
+nav ul{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    list-style:none;
+    padding: 0;
+    font-size: 0.75em;
+}
+nav li{
+    display: flex;
+    justify-content: center;
+}
+nav li{
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav li:hover{
+  background:orange;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logout{
+background-color: tomato;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  .sticky + main{
+      padding-top: 102px;
+  }
+/*media queries*/
+@media screen and (max-width:460px){
+    header{
+        position: relative;
+    }
+    nav ul{
+      
+        flex-direction: column-reverse;
+    }
+    nav a{
+        display: block;
+    }
+   
+}
