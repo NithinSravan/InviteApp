@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/shadow.css">
     <title>Login</title>
 </head>
 
 <body>
+    {{>header}}
     <div class="container">
         <img src="res/loginbg.svg" alt="bg">
     
     <div class="form login">
-        <form method="post" autocomplete="off">
+        <form  method="post" autocomplete="off">
             <div class="txtb">
                 <input type="email" id="name" name="email" placeholder="email">
             </div>
 
             <div class="txtb">
-                <input type="password" id="password" name="userpassword" placeholder="password">
+                <input type="password" id="password" name="password" placeholder="password">
             </div>
-            <div class="button" id="loginbtn">LOGIN</div>
+            <button type="submit" class="button" id="loginbtn">LOGIN</button>
             <span><a href="#">Can't find my password!</a></span>
 
         </form>
     </div>
 </div>
+      
 <script src="js/app.js"></script>
 </body>
 

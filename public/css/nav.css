@@ -26,8 +26,8 @@ header h3{
  }
 nav ul{
     display:flex;
-    justify-content: flex-start;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-direction: row;
     list-style:none;
     padding: 0;
     font-size: 0.75em;
@@ -38,29 +38,27 @@ nav li{
 }
 nav li{
     display: block;
+  
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav a{
+    display: block;
     padding: 10px 20px;
     color: #000;
     text-decoration: none;
     transition: 0.3s;
 }
 
-nav li:hover{
+nav a:hover{
   background:orange;
   color: #fff;
-  cursor: pointer;
 }
-
 .logout{
 background-color: tomato;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
-  .sticky + main{
-      padding-top: 102px;
-  }
+
 /*media queries*/
 @media screen and (max-width:460px){
     header{
@@ -68,10 +66,20 @@ background-color: tomato;
     }
     nav ul{
       
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     nav a{
         display: block;
     }
    
+}
+@media screen and (min-width:460px){
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+      }
+      .sticky + main{
+          padding-top: 102px;
+      }
 }

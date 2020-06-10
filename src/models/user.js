@@ -32,15 +32,6 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
-    age: {
-        type: Number,
-        default: 0,
-        validate(value) {
-            if (value < 0) {
-                throw new Error('Age must be a postive number')
-            }
-        }
-    },
     tokens: [{
         token: {
             type: String,
@@ -49,8 +40,8 @@ const userSchema = new mongoose.Schema({
     }]
 })
 
-userSchema.virtual('tasks', {
-    ref: 'Task',
+userSchema.virtual('invitations', {
+    ref: 'Invitation',
     localField: '_id',
     foreignField: 'owner'
 })
@@ -67,7 +58,7 @@ userSchema.methods.toJSON = function () {
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse')
+    const token = jwt.sign({ _id: user._id.toString() }, 'invite')
 
     user.tokens = user.tokens.concat({ token })
     await user.save()
@@ -83,7 +74,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password)
-
+    
     if (!isMatch) {
         throw new Error('Unable to login')
     }
@@ -91,7 +82,6 @@ userSchema.statics.findByCredentials = async (email, password) => {
     return user
 }
 
-// Hash the plain text password before saving
 userSchema.pre('save', async function (next) {
     const user = this
 

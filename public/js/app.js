@@ -1,9 +1,13 @@
-let login=document.getElementById("loginbtn");
+//sticky header
+window.onscroll = function () { myFunction() };
 
-login.addEventListener("click",()=>{
-    var xhr=new XMLHttpRequest();
-    console.log(1)
-    xhr.open('post','/users/login');
-    xhr.send()
+let header = document.getElementById("navbar");
+let sticky = header.offsetTop;
 
-})
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}

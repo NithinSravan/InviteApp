@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/shadow.css">
+    <title>Invitation App</title>
+</head>
+
+<body>
+         {{>header}} 
+        <div class="container">
+            <div class="form create">
+                <form method="post" autocomplete="off">
+                    <div class="txtb">
+                        <input type="text" id="title" name="title" placeholder="title">
+                    </div>
+        
+                    <div class="txtb">
+                        <textarea id="body" name="body" rows="20">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus hic, minus temporibus dolorem obcaecati eos aliquam non numquam nobis delectus!
+                        </textarea>
+                    </div>
+                    <button type="submit" class="button" id="loginbtn">CREATE</button>
+                </form>
+            </div>
+        </div>
+           {{>footer}}    
+           <script src="js/app.js"></script>
+</body>
+
+</html>
